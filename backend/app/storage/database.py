@@ -13,7 +13,7 @@ class Base(DeclarativeBase):
     """Base class for all persistent application models."""
 
 
-engine = create_engine(settings.database_url, pool_pre_ping=True)
+engine = create_engine(settings.resolved_database_url, pool_pre_ping=True)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 
 
